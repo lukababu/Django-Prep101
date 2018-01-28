@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang=en>
+
+<head>
+<title>
+    {% block head_title %}
+        Prep101 Shift Signup
+    {% endblock %}
+</title>
+
+{%  include "snippets/css.html" %}
+</head>
+
+<body>
+<h1> Prep101 Shift Signup System</h1>
+{%  include "snippets/nav.html" %}
+
+<div class="container">
+    {% block content %}{% endblock content %}
+</div>
+
+{%  include "snippets/js.html" %}
+</body>
+</html>

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block head_title %} Shift Sign Up | {{ block.super }}{% endblock %}
+{% block content %}
+<h1>Sign up for shift </h1>
+
+    <form method="POST"> {% csrf_token %}
+        {{ form.as_p }}
+        <p>{{ form.fieldname.errors.as_text }}</p>
+        <button type="submit">Sign Up</button>
+    </form>
+{% endblock %}

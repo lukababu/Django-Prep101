@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block head_title %} My Shifts | {{ block.super }}{% endblock %}
+{% block content %}
+
+<table>
+    <tbody>
+    <br>
+    Managers:
+        <tr>
+            <td>Name</td>
+            <td>Phone</td>
+            <td>E-mail</td>
+        </tr>
+        {%  for obj in managers %}
+        <tr>
+            <td>{{ obj.user.get_full_name }}</td>
+            <td>{{ obj.phone }}</td>
+            <td>{{ obj.user.email }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<table>
+    <tbody>
+    <br>
+    Marketers:
+        <tr>
+            <td>Name</td>
+            <td>Phone</td>
+            <td>E-mail</td>
+        </tr>
+        {%  for obj in marketers %}
+        <tr>
+            <td>{{ obj.user.get_full_name }}</td>
+            <td>{{ obj.phone }}</td>
+            <td>{{ obj.user.email }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

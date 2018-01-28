@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block head_title %} Shift List | {{ block.super }}{% endblock %}
+{% block content %}
+
+    <h1>Shift List</h1>
+
+    <ul>
+        <h3>Monday</h3>
+    {%  for obj in monday_shifts %}
+        <li><a href="/shifts/{{ obj.pk }}">{{ obj.class_name }}</a> <br/>
+            {{ obj.time }} {{ obj.location }}</li>
+    {%  endfor %}
+    </ul>
+
+    <ul>
+        <h3>Tuesday</h3>
+    {%  for obj in tuesday_shifts %}
+        <li><a href="/shifts/{{ obj.pk }}">{{ obj.class_name }}</a> <br/>
+            {{ obj.time }} {{ obj.location }}</li>
+    {%  endfor %}
+    </ul>
+
+    <ul>
+        <h3>Wednesday</h3>
+    {%  for obj in wednesday_shifts %}
+        <li><a href="/shifts/{{ obj.pk }}">{{ obj.class_name }}</a> <br/>
+            {{ obj.time }} {{ obj.location }}</li>
+    {%  endfor %}
+    </ul>
+
+    <ul>
+        <h3>Thursday</h3>
+    {%  for obj in thursday_shifts %}
+        <li><a href="/shifts/{{ obj.pk }}">{{ obj.class_name }}</a> <br/>
+            {{ obj.time }} {{ obj.location }}</li>
+    {%  endfor %}
+    </ul>
+
+    <ul>
+        <h3>Friday</h3>
+    {%  for obj in friday_shifts %}
+        <li><a href="/shifts/{{ obj.pk }}">{{ obj.class_name }}</a> <br/>
+            {{ obj.time }} {{ obj.location }}</li>
+    {%  endfor %}
+    </ul>
+{% endblock %}

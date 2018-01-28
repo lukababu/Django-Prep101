@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block head_title %} Shift List | {{ block.super }}{% endblock %}
+{% block content %}
+
+    <h1>{{ object.class_name }} Details</h1>
+
+<table>
+    <a href="/shifts/{{ object.pk }}/lead_signup/">Sign up as lead marketer</a>
+ |
+    <a href="/shifts/{{ object.pk }}/marketer_signup/">Sign up as marketer</a>
+    <tbody>
+        <tr>
+            <td>Class Name:</td>
+            <td>{{ object.class_name }}</td>
+        </tr>
+        <tr>
+            <td>Location:</td>
+            <td>{{ object.location }}</td>
+        </tr>
+        <tr>
+            <td>Start Time:</td>
+            <td>{{ object.time }}</td>
+        </tr>
+        <tr>
+            <td>End Time:</td>
+            <td>{{ end_time }}</td>
+        </tr>
+        <tr>
+            <td>Market Leader:</td>
+            <td>{{ object.lead_marketer }}</td>
+        </tr>
+        <tr>
+            <td>Marketers:</td>
+            <td>{% for i in object.marketers.all %}
+                    {{ i.user.get_full_name }},
+                {%  endfor %}
+            </td>
+        </tr>
+        <tr>
+            <td>Manager:</td>
+            <td>{{ object.manager }}</td>
+        </tr>
+        <tr>
+            <td>Handout Type:</td>
+            <td>{{ object.handout_type }}</td>
+        </tr>
+        <tr>
+            <td>Locker:</td>
+            <td>{{ object.locker }}</td>
+        </tr>
+    </tbody>
+</table>
+
+{% endblock %}

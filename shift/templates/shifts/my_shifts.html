@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block head_title %} My Shifts | {{ block.super }}{% endblock %}
+{% block content %}
+
+    <h1>My Shifts</h1>
+
+ {%  for obj in user_data %}
+        <li><a href="/shifts/{{ obj.pk }}">{{ obj.class_name }}</a> <br/>
+            {{ obj.time }} {{ obj.location }}</li>
+    {%  endfor %}
+
+{% endblock %}
