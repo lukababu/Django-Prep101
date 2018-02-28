@@ -1,0 +1,8 @@
+Username		Password
+----------------------------------
+anna.kadyreva		Django123
+ramanan.thamotharam	Django123
+adrienne.deitz		Django123
+lamiya.anis		Django123
+thai.giang		Django123
+daniel.lopez		Django123
